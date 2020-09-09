@@ -130,7 +130,7 @@
 
       <!-- 根据 "时间统计和站点统计是否至少开启一个" 来决定是否要添加换行 -->
       
-        // <br/>
+         <br/>
       
 
       
@@ -172,11 +172,11 @@
             var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
             var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
             var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
-            document.getElementById("sitetime").innerHTML="本站已勉强运行 "
+            document.getElementById("sitetime").innerHTML="本站已勉強運行 "
               // +diffYears+" 年 "
               +diffDays+" 天 "
-              +diffHours+" 小时 "
-              +diffMinutes+" 分钟 "
+              +diffHours+" 小時 "
+              +diffMinutes+" 分鐘 "
               +diffSeconds+" 秒";
           } /* 因为建站时间还没有一年, 就将之注释掉了. 需要的可以取消 */
           siteTime();
