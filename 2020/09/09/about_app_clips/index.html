@@ -12,7 +12,7 @@
 
 
 
-<title>Hello World | Hello! This is Ethan</title>
+<title>關於 App Clips 基本知識 | Hello! This is Ethan</title>
 
 
 
@@ -107,73 +107,11 @@
             <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    document.ready(
-        function () {
-            tocbot.init({
-                tocSelector: '.tocbot-list',
-                contentSelector: '.post-content',
-                headingSelector: 'h1, h2, h3, h4, h5',
-                collapseDepth: 1,
-                orderedList: false,
-                scrollSmooth: true,
-            })
-        }
-    )
-
-    function expand_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 6,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "collapse_toc()");
-        b.innerHTML = "Collapse all"
-    }
-
-    function collapse_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 1,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "expand_toc()");
-        b.innerHTML = "Expand all"
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-</script>
-    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Hello World</h1>
+            <h1 class="post-title">關於 App Clips 基本知識</h1>
             
                 <div class="post-meta">
                     
@@ -182,56 +120,58 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">September 8, 2020&nbsp;&nbsp;16:44:05</a>
+                        Date: <a href="#">September 9, 2020&nbsp;&nbsp;12:43:27</a>
                         </span>
                     
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E6%8A%80%E8%A1%93/">技術</a>
+                            
+                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+            <ul>
+<li><p>是一個輕量型app，蘋果規定大小必須在10mb以內</p>
+</li>
+<li><p>喚醒App Clips可透過 QRCode、NFC、::App Clip Codes:: (Apple年底會推出的，結合NFC和QRCode的東西）、Safari Links、Message Links、Maps、Spotlight、App Library</p>
+</li>
+<li><p>隱私權授權方式的限制和調整（ ::不能請求敏感性資料::，這裡所說的敏感性資料包含健康、運動、通訊錄、訊息、照片、文件等個人資訊 ，8小時內的通知 以及 一次性的定位授權則<strong>不需要</strong>授權）</p>
+</li>
+<li><p>App Clips中<strong>不支持</strong>使用Universal Link</p>
+</li>
+<li><p>當使用者使用了App Clips之後，下載了主要程式，已經allow的權限會轉移到主程式，而儲存的資料，也會透過app group的id來轉移（包含透過Apple Sign In的資料也會）</p>
+</li>
+<li><p>若要如裡使用者下載主要程式可以用<code>SKOverlap</code>這個API</p>
+</li>
+<li><p>如果使用者下載的App Clips <strong>一段時間沒有使用</strong> 的話，系統就會刪除掉</p>
+</li>
+<li><p>App Clips的下載連結其實是一個Universal Link，可以在AppleConnect上面設定，也可以帶參數來呈現不同的內容及不同的頁面（需要注意的是，主程式中也需要在<code>AppDelegate</code>中的<code>handleUserActivity</code>中處理這些Universal Link的參數，不然當使用者下載主程式之後，只會打開app，不會因為參數而帶到其他頁面）</p>
+</li>
+<li><p>設定好Universal Link之後，在Safari、iMessage、Siri建議上面會出現縮圖，縮圖以及點擊縮圖的內容，也需要在AppleConnect中設定，上傳的圖片、title以及subtitle的設定上有 <strong>一定的規範</strong></p>
+<ul>
+<li>主要圖片：要呈現相關主題的圖片，而不是文字或是廣告；3:2 aspect fill的模式；2000px X 3000px的尺寸；建議使用png或jpg； <strong>不能有透明度</strong></li>
+<li>title和subtitle：要呈現商家訊息而不是app的訊息；可以考慮作localized來支持不同的語言； ::title最多是18個字元而subtitle最多呈現43個字元:: 。</li>
+<li>action：只有Apple提供的action可以使用，就如Open、View以及Play</li>
+</ul>
+</li>
+<li><p>App Clips的生命週期是由系統來接管的。</p>
+</li>
+</ul>
+<p>以上，有學到新的東西再增加內容 😉</p>
 
         </div>
 
         
             <section class="post-copyright">
                 
-                    <p class="copyright-item">
-                        <span>Author:</span>
-                        <span>Ethan</span>
-                    </p>
                 
                 
-                    <p class="copyright-item">
-                        <span>Permalink:</span>
-                        <span><a href="http://example.com/2020/09/08/hello-world/">http://example.com/2020/09/08/hello-world/</a></span>
-                    </p>
-                
-                
-                    <p class="copyright-item">
-                        <span>License:</span>
-                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
-                    </p>
-                
-                
-                     <p class="copyright-item">
-                         <span>Slogan:</span>
-                         <span>Do you believe in <strong>DESTINY</strong>?</span>
-                     </p>
                 
 
             </section>
@@ -241,6 +181,10 @@
                 <span>Tag(s):</span>
                 <span class="tag">
                     
+                    
+                        <a href="/tags/iOS/"># iOS</a>
+                    
+                        
                 </span>
             </div>
             <div>
