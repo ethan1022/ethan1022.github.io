@@ -107,6 +107,68 @@
             <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
 
     
     <article class="post-wrap">
@@ -139,7 +201,9 @@
         </header>
 
         <div class="post-content">
-            <ul>
+            <p>是Apple在2020的WWDC中所推出的新架構，為的是讓使用者能快速體驗App的主要功能但不需要完整下載App的新流程。</p>
+<h2 id="相關技術的比較"><a href="#相關技術的比較" class="headerlink" title="相關技術的比較"></a>相關技術的比較</h2><p><a target="_blank" rel="noopener" href="https://juejin.im/post/6844904199210139661">這篇文章</a>有寫到相關技術的比較，因此我就不在這邊贅述了</p>
+<h2 id="實作App-Clips的相關須知"><a href="#實作App-Clips的相關須知" class="headerlink" title="實作App Clips的相關須知"></a>實作App Clips的相關須知</h2><ul>
 <li><p>是一個輕量型app，蘋果規定大小必須在10mb以內</p>
 </li>
 <li><p>喚醒App Clips可透過 QRCode、NFC、<strong>App Clip Codes</strong> (Apple年底會推出的，結合NFC和QRCode的東西）、Safari Links、Message Links、Maps、Spotlight、App Library</p>
@@ -165,6 +229,20 @@
 </li>
 <li><p>App Clips的生命週期是由系統來接管的。</p>
 </li>
+</ul>
+<h2 id="如何在Server端設置App-Clips？"><a href="#如何在Server端設置App-Clips？" class="headerlink" title="如何在Server端設置App Clips？"></a>如何在Server端設置App Clips？</h2><p>設置的方式與Universal Link的設置相同…</p>
+<ol>
+<li><p>在Server端添加 <strong>Apple App Site Association file</strong></p>
+</li>
+<li><p>在 Apple App Site Association file 中增加下圖數值<br><img src="/2020/09/09/about_app_clips/app_clips_setting_in_server.png" alt="Server端設置App Clips圖示"></p>
+</li>
+<li><p>在Xcode中增加 Associated Domains Entitlement</p>
+</li>
+</ol>
+<h2 id="如何在Server端設置App-Clips？-1"><a href="#如何在Server端設置App-Clips？-1" class="headerlink" title="如何在Server端設置App Clips？"></a>如何在Server端設置App Clips？</h2><ul>
+<li>SwiftUI：<code>onContinueUserActivity(_:perform:)</code></li>
+<li>App Delegate app：<code>application(_:continue:restorationHandler:)</code></li>
+<li>Scene-Based app：<code>scene(_:willContinueUserActivityWithType:)</code></li>
 </ul>
 <p>以上，有學到新的東西再增加內容 😉</p>
 
